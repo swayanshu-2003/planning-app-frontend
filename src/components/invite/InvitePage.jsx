@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useLocation, useNavigate, useParams } from 'react-router-dom'
 import axiosInstance from '../../utils/axiosInstance';
 import moment from 'moment';
 import Loader from '../loader/Loader';
 
 const InvitePage = () => {
     const navigate = useNavigate();
+    const location = useLocation();
     const { uuid } = useParams();
     const [details, setDetails] = useState({});
     const [loading, setloading] = useState(false)
     useEffect(() => {
         const token = sessionStorage.getItem('token');
         if (!token) {
+            sessionStorage.setItem('inviteUrl', location.pathname + location.search)
             navigate('/auth/login');
         }
     }, [navigate]);

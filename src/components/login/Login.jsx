@@ -24,7 +24,13 @@ const Login = ({ refetch }) => {
             if (res?.data?.success) {
                 refetch(val => !val);
                 sessionStorage.setItem('token', `Bearer ${res.data.token}`);
-                navigate('../home');
+                if (sessionStorage.getItem('inviteUrl')) {
+                    const inviteURl = sessionStorage.getItem('inviteUrl');
+                    sessionStorage.removeItem('inviteUrl')
+                    navigate(inviteURl);
+                } else {
+                    navigate('../home');
+                }
                 setLoginLoading(false)
             }
             setLoginLoading(false)
@@ -40,7 +46,13 @@ const Login = ({ refetch }) => {
                 if (res?.data?.success) {
                     refetch(val => !val);
                     sessionStorage.setItem('token', `Bearer ${res.data.token}`);
-                    navigate('../home');
+                    if (sessionStorage.getItem('inviteUrl')) {
+                        const inviteURl = sessionStorage.getItem('inviteUrl');
+                        sessionStorage.removeItem('inviteUrl')
+                        navigate(inviteURl);
+                    } else {
+                        navigate('../home');
+                    }
                     setIsLogin(true);
                     setLoginLoading(false)
                 }
