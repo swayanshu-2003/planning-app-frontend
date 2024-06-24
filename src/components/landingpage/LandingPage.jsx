@@ -84,16 +84,12 @@ const LandingPage = () => {
                     <div className="container mx-auto text-center">
                         <h2 className="text-4xl font-bold mb-8">Contact Us</h2>
                         <p>If you have any questions or need support, feel free to reach out.</p>
-                        <a href="mailto:support@planit.com" className="text-blue-600 underline">support@planit.com</a>
+                        <a href="mailto:support@planit.com" className="text-blue-600 underline">swayanshu2003@gmail.com</a>
                     </div>
                 </section>
             </main>
 
-            <footer className="bg-gray-800 text-white p-4">
-                <div className="container mx-auto text-center">
-                    <p>&copy; 2024 PlanIt. All rights reserved.</p>
-                </div>
-            </footer>
+
         </div>
     );
 }

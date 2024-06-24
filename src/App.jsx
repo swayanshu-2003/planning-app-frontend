@@ -9,6 +9,7 @@ import StickyPlusButton from './components/misc/StickyPlusButton';
 import InvitePage from './components/invite/InvitePage';
 import NotFound from './components/404/NotFound';
 import LandingPage from './components/landingpage/LandingPage';
+import Footer from './components/footer/Footer';
 
 const App = () => {
   return (
@@ -61,6 +62,7 @@ const AppContent = () => {
         <Route path="/404" element={<NotFound />} />
       </Routes>
       {user !== null && <StickyPlusButton setRefetch={setRefetch} />}
+      <Footer />
     </div>
   );
 };
